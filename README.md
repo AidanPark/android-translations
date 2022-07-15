@@ -1,5 +1,6 @@
 # android-translations
 
+```
 /**
  * The interface that Translator must implement.
  * See sample app for implementation instructions.
@@ -34,5 +35,5 @@ interface Translator {
      */
     suspend fun translate(transRequest: TransRequest, onCompleted: (transResponse :TransResponse) -> Unit)
 }
-
+```
 
