@@ -1,4 +1,6 @@
-# android-translations
+# android-translations [![](https://jitpack.io/v/AidanPark/android-translations.svg)](https://jitpack.io/#AidanPark/android-translations)
+Provides free translations in an Android environment.
+This is based on http requests made on the translation site and may not work properly without notification at any time.
 
 ```
 /**
