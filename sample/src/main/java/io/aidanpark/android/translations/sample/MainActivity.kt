@@ -21,7 +21,9 @@ class MainActivity : ComponentActivity() {
 
     private val TAG: String = "MainActivity"
 
-    private val googleJSViewModel: GoogleJSViewModel by viewModels()
+    //private val transViewModel: GoogleJSViewModel by viewModels()
+    //private val transViewModel: KakaoViewModel by viewModels()
+    private val transViewModel: GoogleMLKitViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +43,7 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun translationTest() {
-        googleJSViewModel.transResponse.observe(this) {
+        transViewModel.transResponse.observe(this) {
             Log.d(TAG, "transResponse observed $it")
         }
 
@@ -49,7 +51,7 @@ class MainActivity : ComponentActivity() {
         val targetLanguageCode = "en"
         val sourceText = "호랑이가 산을 뛰어다닙니다.\n아주 빠르게 뛰어다닙니다."
         val transRequest = TransRequest(sourceLanguageCode, targetLanguageCode, sourceText)
-        googleJSViewModel.request(transRequest)
+        transViewModel.request(transRequest)
     }
 }
 

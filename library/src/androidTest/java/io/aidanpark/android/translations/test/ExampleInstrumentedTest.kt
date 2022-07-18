@@ -2,12 +2,20 @@ package io.aidanpark.android.translations.test
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import io.aidanpark.android.translations.TransRequest
+import io.aidanpark.android.translations.Translator
 import io.aidanpark.android.translations.google.js.GoogleJSTranslator
+import io.aidanpark.android.translations.kakao.KakaoTranslator
+import io.aidanpark.android.translations.kakao.KakaoTranslatorTest
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Assert.*
+import kotlin.coroutines.CoroutineContext
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -21,5 +29,15 @@ class ExampleInstrumentedTest {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("io.aidanpark.android.translations.test", appContext.packageName)
+
+
+        val sourceLanguageCode = "ko" // "ko"
+        val targetLanguageCode = "en"
+        val sourceText = "호랑이가 산을 뛰어다닙니다.\n아주 빠르게 뛰어다닙니다."
+        val transRequest = TransRequest(sourceLanguageCode, targetLanguageCode, sourceText)
+        val translator: KakaoTranslatorTest = KakaoTranslatorTest()
+        translator.translateTest(transRequest) {
+
+        }
     }
 }

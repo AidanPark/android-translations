@@ -3,6 +3,8 @@ package io.aidanpark.android.translations
 /**
  * The interface that Translator must implement.
  * See sample app for implementation instructions.
+ *
+ * todo 번역 실패시 실패 메시지를 반환해야 함.
  */
 interface Translator {
 

@@ -6,15 +6,16 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import io.aidanpark.android.translations.TransRequest
 import io.aidanpark.android.translations.TransResponse
 import io.aidanpark.android.translations.google.js.GoogleJSTranslator
+import io.aidanpark.android.translations.google.mlkit.GoogleMLKitTranslator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class GoogleJSViewModel @Inject constructor(application: Application) : AndroidViewModel(application) {
+class GoogleMLKitViewModel @Inject constructor(application: Application) : AndroidViewModel(application) {
 
-    private val translator: GoogleJSTranslator = GoogleJSTranslator()
+    private val translator: GoogleMLKitTranslator = GoogleMLKitTranslator()
 
     private val _transResponse: MutableLiveData<TransResponse> = MutableLiveData()
 
