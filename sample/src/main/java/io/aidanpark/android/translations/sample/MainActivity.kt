@@ -22,7 +22,6 @@ class MainActivity : ComponentActivity() {
     private val TAG: String = "MainActivity"
 
     //private val transViewModel: GoogleJSViewModel by viewModels()
-    //private val transViewModel: KakaoViewModel by viewModels()
     private val transViewModel: GoogleMLKitViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
