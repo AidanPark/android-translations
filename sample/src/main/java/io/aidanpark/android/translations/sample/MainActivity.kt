@@ -1,6 +1,7 @@
 package io.aidanpark.android.translations.sample
 
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
     private val TAG: String = "MainActivity"
 
     //private val transViewModel: GoogleJSViewModel by viewModels()
-    private val transViewModel: GoogleMLKitViewModel by viewModels()
+    private val transViewModel: GoogleCloudViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,9 +49,18 @@ class MainActivity : ComponentActivity() {
 
         val sourceLanguageCode = "ko" // "ko"
         val targetLanguageCode = "en"
-        val sourceText = "호랑이가 산을 뛰어다닙니다.\n아주 빠르게 뛰어다닙니다."
-        val transRequest = TransRequest(sourceLanguageCode, targetLanguageCode, sourceText)
+
+        var sourceText = "호랑이가 산을 뛰어다닙니다.\n아주 빠르게 뛰어다닙니다."
+        var transRequest = TransRequest(sourceLanguageCode, targetLanguageCode, sourceText)
         transViewModel.request(transRequest)
+
+//        sourceText = "두번째 호랑이가 산을 뛰어다닙니다.\n아주 빠르게 뛰어다닙니다."
+//        transRequest = TransRequest(sourceLanguageCode, targetLanguageCode, sourceText)
+//        transViewModel.request(transRequest)
+//
+//        sourceText = "세번째 호랑이가 산을 뛰어다닙니다.\n아주 빠르게 뛰어다닙니다."
+//        transRequest = TransRequest(sourceLanguageCode, targetLanguageCode, sourceText)
+//        transViewModel.request(transRequest)
     }
 }
 

@@ -5,8 +5,7 @@ import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.aidanpark.android.translations.TransRequest
 import io.aidanpark.android.translations.TransResponse
-import io.aidanpark.android.translations.google.js.GoogleJSTranslator
-import io.aidanpark.android.translations.google.mlkit.GoogleMLKitTranslator
+import io.aidanpark.android.translations.google.GoogleMLKitTranslator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

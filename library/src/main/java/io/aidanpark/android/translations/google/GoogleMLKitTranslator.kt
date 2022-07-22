@@ -1,4 +1,4 @@
-package io.aidanpark.android.translations.google.mlkit
+package io.aidanpark.android.translations.google
 
 import com.google.mlkit.nl.translate.TranslateLanguage
 import com.google.mlkit.nl.translate.Translation

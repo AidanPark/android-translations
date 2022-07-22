@@ -1,4 +1,4 @@
-package io.aidanpark.android.translations.google.js
+package io.aidanpark.android.translations.google
 
 import io.aidanpark.android.translations.TransRequest
 import io.aidanpark.android.translations.TransResponse
