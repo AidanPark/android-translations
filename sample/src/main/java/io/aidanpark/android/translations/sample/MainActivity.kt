@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
     private val TAG: String = "MainActivity"
 
     //private val transViewModel: GoogleJSViewModel by viewModels()
-    private val transViewModel: GoogleCloudViewModel by viewModels()
+    private val transViewModel: AzureViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
             Log.d(TAG, "transResponse observed $it")
         }
 
-        val sourceLanguageCode = "ko" // "ko"
+        val sourceLanguageCode = "auto" // "ko"
         val targetLanguageCode = "en"
 
         var sourceText = "호랑이가 산을 뛰어다닙니다.\n아주 빠르게 뛰어다닙니다."

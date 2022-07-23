@@ -10,8 +10,8 @@ android {
     defaultConfig {
         minSdk 24
         targetSdk 32
-        versionCode 9003
-        versionName "v0.9.3"
+        versionCode 9004
+        versionName "v0.9.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -75,7 +75,7 @@ afterEvaluate {
 
                 groupId = 'com.github.AidanPark'
                 artifactId = 'android-translations'
-                version = 'v0.9.3'
+                version = 'v0.9.4'
             }
         }
     }
