@@ -22,8 +22,8 @@ class MainActivity : ComponentActivity() {
 
     private val TAG: String = "MainActivity"
 
-    //private val transViewModel: GoogleJSViewModel by viewModels()
-    private val transViewModel: AzureViewModel by viewModels()
+    private val transViewModel: GoogleJSViewModel by viewModels()
+    //private val transViewModel: AzureViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
