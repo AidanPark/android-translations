@@ -26,7 +26,7 @@ class GoogleCloudTranslator(
 ) : Translator {
 
     companion object {
-        private val supportedLanguageCodes = arrayOf(
+        val supportedLanguageCodes = arrayOf(
             "af", // 아프리칸스어
             "sq", // 알바니아어
             "am", // 암하라어
@@ -137,17 +137,17 @@ class GoogleCloudTranslator(
             "yo", // 요루바어
             "zu", // 줄루어
         )
-    }
 
-    override val supportedSourceLanguageCodes: List<String> by lazy {
-        mutableListOf(*supportedLanguageCodes)
+        val supportedSourceLanguageCodes: List<String> = mutableListOf(*supportedLanguageCodes)
             .apply { add(0, "auto") }
             .toList()
+
+        val supportedTargetLanguageCodes: List<String> = listOf(*supportedLanguageCodes)
     }
 
-    override val supportedTargetLanguageCodes: List<String> by lazy {
-        listOf(*supportedLanguageCodes)
-    }
+    override val supportedSourceLanguageCodes: List<String> = GoogleCloudTranslator.supportedSourceLanguageCodes
+
+    override val supportedTargetLanguageCodes: List<String> = GoogleCloudTranslator.supportedTargetLanguageCodes
 
     private val cloudTranslate: com.google.api.services.translate.Translate by lazy {
         val translateRequestInitializer: TranslateRequestInitializer = object : TranslateRequestInitializer(google_cloud_translation_api_key) {

@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import dagger.hilt.android.AndroidEntryPoint
 import io.aidanpark.android.translations.TransRequest
+import io.aidanpark.android.translations.google.GoogleCloudTranslator
 import io.aidanpark.android.translations.sample.ui.theme.AndroidTranslationsTheme
 
 @AndroidEntryPoint
@@ -35,6 +36,10 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        println("+++++++++++++++++++++++++++++++++++++\n"+GoogleCloudTranslator.supportedLanguageCodes)
+        println("+++++++++++++++++++++++++++++++++++++\n"+GoogleCloudTranslator.supportedSourceLanguageCodes)
+        println("+++++++++++++++++++++++++++++++++++++\n"+GoogleCloudTranslator.supportedTargetLanguageCodes)
     }
 
     override fun onResume() {

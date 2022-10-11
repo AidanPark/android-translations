@@ -53,8 +53,8 @@ android {
 }
 
 dependencies {
-    //implementation project(path: ':library')
-    implementation 'com.github.AidanPark:android-translations:v0.9.4'
+    implementation project(path: ':library')
+    //implementation 'com.github.AidanPark:android-translations:v0.9.4'
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation "androidx.compose.ui:ui:$compose_version"

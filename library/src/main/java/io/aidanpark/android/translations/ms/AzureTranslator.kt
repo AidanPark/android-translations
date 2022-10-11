@@ -3,6 +3,7 @@ package io.aidanpark.android.translations.ms
 import io.aidanpark.android.translations.TransRequest
 import io.aidanpark.android.translations.TransResponse
 import io.aidanpark.android.translations.Translator
+import io.aidanpark.android.translations.google.GoogleCloudTranslator
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -22,7 +23,7 @@ class AzureTranslator(
 ) : Translator {
 
     companion object {
-        private val supportedLanguageCodes = arrayOf(
+        val supportedLanguageCodes = arrayOf(
             "af", // Afrikaans
             "sq", // Albanian
             "am", // Amharic
@@ -135,17 +136,17 @@ class AzureTranslator(
             "yua", // Yucatec Maya
             "zu", // Zulu
         )
-    }
 
-    override val supportedSourceLanguageCodes: List<String> by lazy {
-        mutableListOf(*supportedLanguageCodes)
+        val supportedSourceLanguageCodes: List<String> = mutableListOf(*supportedLanguageCodes)
             .apply { add(0, "auto") }
             .toList()
+
+        val supportedTargetLanguageCodes: List<String> = listOf(*supportedLanguageCodes)
     }
 
-    override val supportedTargetLanguageCodes: List<String> by lazy {
-        listOf(*supportedLanguageCodes)
-    }
+    override val supportedSourceLanguageCodes: List<String> = AzureTranslator.supportedSourceLanguageCodes
+
+    override val supportedTargetLanguageCodes: List<String> = AzureTranslator.supportedTargetLanguageCodes
 
     override suspend fun translate(transRequest: TransRequest, onCompleted: (transResponse: TransResponse) -> Unit) {
         val transResponse = TransResponse(transRequest)

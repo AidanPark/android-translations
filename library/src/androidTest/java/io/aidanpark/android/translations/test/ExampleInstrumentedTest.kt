@@ -3,6 +3,7 @@ package io.aidanpark.android.translations.test
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import io.aidanpark.android.translations.TransRequest
+import io.aidanpark.android.translations.google.GoogleCloudTranslator
 
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -31,5 +32,7 @@ class ExampleInstrumentedTest {
 //        translator.translateTest(transRequest) {
 //
 //        }
+
+
     }
 }
